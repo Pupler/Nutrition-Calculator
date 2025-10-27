@@ -31,12 +31,39 @@ public class NutritionCalculator {
         JButton calculateButton = new JButton("Calculate");
         frame.add(calculateButton);
 
-        frame.add(new JLabel("Calculation result:"));
+        JLabel resultCalculation = new JLabel("Daily calories:");
+        frame.add(resultCalculation);
 
 
         // Button events
-        
+        calculateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int weight = Integer.parseInt(weightTextField.getText());
+                    int height = Integer.parseInt(heightTextField.getText());
+                    int age = Integer.parseInt(ageTextField.getText());
+                    String gender = (String) genderComboBox.getSelectedItem();
+                    
+                    double bmr = 0;
+                    if (gender.equals("male")) {
+                        bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
+                    } else if (gender.equals("female")) {
+                        bmr = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
+                    } else {
+                        System.out.println("Error eccured!");
+                    }
 
+                    double dailyCalories = bmr * 1.375;
+                    resultCalculation.setText("Daily calories: " + String.format("%.0f", dailyCalories));
+
+
+                    } catch (Exception ex) {
+                        resultCalculation.setText("Error occured! Try again.");
+                    }
+
+            }
+        });
+    
 
 
         // Show window
