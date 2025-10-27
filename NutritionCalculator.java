@@ -1,36 +1,45 @@
-import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class NutritionCalculator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Window creation
+        JFrame frame = new JFrame("Nutrition Calculator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500,400);
+        frame.setLayout(new GridLayout(5,2));
 
-        System.out.print("Enter your body weight (kg): ");
-        int weight = scanner.nextInt();
+        // Components adding
+        frame.add(new JLabel("Weight (kg):"));
+        JTextField weightTextField = new JTextField();
+        frame.add(weightTextField);
 
-        System.out.print("Enter your height (cm): ");
-        int height = scanner.nextInt();
+        frame.add(new JLabel("Height (cm):"));
+        JTextField heightTextField = new JTextField();
+        frame.add(heightTextField);
 
-        System.out.print("Enter your age: ");
-        int age = scanner.nextInt();
+        frame.add(new JLabel("Age:"));
+        JTextField ageTextField = new JTextField();
+        frame.add(ageTextField);
 
-        System.out.print("Enter your gender (male/female): ");
-        String gender = scanner.next();
+        frame.add(new JLabel("Gender:"));
+        JComboBox<String> genderComboBox = new JComboBox<>(new String[]{"male", "female"});
+        frame.add(genderComboBox);
 
-        if (gender.equals("male")) {
-            double bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
-            double dailyCalories = bmr * 1.375;
+        JButton calculateButton = new JButton("Calculate");
+        frame.add(calculateButton);
 
-            System.out.println("Your daily calories (default activity): " + dailyCalories);
-        } else if (gender.equals("female")) {
-            double bmr = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
-            double dailyCalories = bmr * 1.375;
+        frame.add(new JLabel("Calculation result:"));
 
-            System.out.println("Your daily calories (default activity): " + dailyCalories);
-        } else {
-            System.out.println("Error! Try again.");
-        }
 
+        // Button events
         
-        scanner.close();
+
+
+
+        // Show window
+        frame.setVisible(true);
     }
 }
