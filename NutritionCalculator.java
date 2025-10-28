@@ -8,8 +8,8 @@ public class NutritionCalculator {
         // Window creation
         JFrame frame = new JFrame("Nutrition Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,400);
-        frame.setLayout(new GridLayout(5,2));
+        frame.setSize(650,400);
+        frame.setLayout(new GridLayout(6,2));
 
         // Components adding
         frame.add(new JLabel("Weight (kg):"));
@@ -27,6 +27,16 @@ public class NutritionCalculator {
         frame.add(new JLabel("Gender:"));
         JComboBox<String> genderComboBox = new JComboBox<>(new String[]{"male", "female"});
         frame.add(genderComboBox);
+
+        frame.add(new JLabel("Activity:"));
+        JComboBox<String> activityComboBox = new JComboBox<>(new String[]{
+            "Sedentary (low physical activity)",
+            "Light exercises (1-2 trainings per week)",
+            "Regular exercises (3-5 trainings per week)",
+            "Intensive exercises (6-7 trainings per week)",
+            "Sportsman (2 trainings per day)"
+        });
+        frame.add(activityComboBox);
 
         JButton calculateButton = new JButton("Calculate");
         frame.add(calculateButton);
