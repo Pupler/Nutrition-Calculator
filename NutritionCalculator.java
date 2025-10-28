@@ -53,7 +53,25 @@ public class NutritionCalculator {
                     int height = Integer.parseInt(heightTextField.getText());
                     int age = Integer.parseInt(ageTextField.getText());
                     String gender = (String) genderComboBox.getSelectedItem();
-                    
+                    String activity = (String) activityComboBox.getSelectedItem();
+
+
+                    double activityMultiplier = 1.375; // Default value
+                    if (activity.contains("Sedentary")) {
+                        activityMultiplier = 1.2;
+                    } else if (activity.contains("Light")) {
+                        activityMultiplier = 1.375;
+                    } else if (activity.contains("Regular")) {
+                        activityMultiplier = 1.55;
+                    } else if (activity.contains("Intensive")) {
+                        activityMultiplier = 1.725;
+                    } else if (activity.contains("Sportsman")) {
+                        activityMultiplier = 1.9;
+                    } else {
+                        System.out.println("Error occured!");
+                    }
+
+
                     double bmr = 0;
                     if (gender.equals("male")) {
                         bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
@@ -63,7 +81,7 @@ public class NutritionCalculator {
                         System.out.println("Error eccured!");
                     }
 
-                    double dailyCalories = bmr * 1.375;
+                    double dailyCalories = bmr * activityMultiplier;
                     resultCalculation.setText("Daily calories: " + String.format("%.0f", dailyCalories));
 
 
