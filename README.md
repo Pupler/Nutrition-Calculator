@@ -1,25 +1,35 @@
 # 🍎 Nutrition Calculator
 
-A Java-based desktop application that calculates your daily calorie needs using proven scientific formulas.
+A sleek Java desktop application designed to calculate your daily calorie requirements with scientific precision. Perfect for fitness enthusiasts and health-conscious individuals.
 
 ## ⚙️ Features
-- Calculate Basal Metabolic Rate (BMR)
-- Estimate daily calorie requirements
-- Support for both male and female users
-- Simple and intuitive graphical interface
+
+- **🧮 BMR Calculation** - Accurate Basal Metabolic Rate using Mifflin-St Jeor formula  
+- **🎯 Calorie Estimation** - Personalized daily calorie needs
+- **⚖️ Gender-Specific** - Tailored calculations for male and female physiology
+- **🏃 Activity Adjustment** - Customizable activity levels for precise results
+- **💻 User-Friendly GUI** - Clean and intuitive Swing interface
 
 ## 🚀 Getting started
+
+### Prerequisites
+- Java JDK 8 or higher
+- Git (optional)
 
 ```bash
 # Clone the repository
 git clone https://github.com/Pupler/Nutrition-Calculator.git
 
-# Navigate to project directory
+# Enter project directory
 cd Nutrition-Calculator
 
-# Compile the program
+# Compile the application
 javac NutritionCalculator.java
 
-# Launch the application
+# Launch the calculator
 java NutritionCalculator
 ```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
