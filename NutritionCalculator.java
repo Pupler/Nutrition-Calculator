@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.StringReader;
 
 public class NutritionCalculator {
     public static void main(String[] args) {
@@ -62,6 +63,19 @@ public class NutritionCalculator {
                     int age = Integer.parseInt(ageTextField.getText());
                     String gender = (String) genderComboBox.getSelectedItem();
                     String activity = (String) activityComboBox.getSelectedItem();
+                    String goal = (String) goalComboBox.getSelectedItem();
+
+
+                    double goalMultiplier = 0; // Default value
+                    if (goal.contains("Weight Loss")) {
+                        goalMultiplier = -500;
+                    } else if (goal.contains("Maintenance")) {
+                        goalMultiplier = 0;
+                    } else if (goal.contains("Muscle Gain")) {
+                        goalMultiplier = 500;
+                    } else {
+                        System.out.println("Error occured!");
+                    }
 
 
                     double activityMultiplier = 1.375; // Default value
@@ -89,7 +103,7 @@ public class NutritionCalculator {
                         System.out.println("Error eccured!");
                     }
 
-                    double dailyCalories = bmr * activityMultiplier;
+                    double dailyCalories = (bmr * activityMultiplier) + goalMultiplier;
                     resultCalculation.setText("Daily calories: " + String.format("%.0f", dailyCalories));
 
 
