@@ -9,7 +9,7 @@ public class NutritionCalculator {
         JFrame frame = new JFrame("Nutrition Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(650,400);
-        frame.setLayout(new GridLayout(6,2));
+        frame.setLayout(new GridLayout(7,2));
 
         // Components adding
         frame.add(new JLabel("Weight (kg):"));
@@ -37,6 +37,14 @@ public class NutritionCalculator {
             "Sportsman (2 trainings per day)"
         });
         frame.add(activityComboBox);
+
+        frame.add(new JLabel("Goal:"));
+        JComboBox<String> goalComboBox = new JComboBox<>(new String[]{
+            "Weight Loss",
+            "Maintenance",
+            "Muscle Gain"
+        });
+        frame.add(goalComboBox);
 
         JButton calculateButton = new JButton("Calculate");
         frame.add(calculateButton);
