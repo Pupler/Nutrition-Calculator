@@ -2,6 +2,11 @@
 
 A professional Java desktop application for calculating daily calorie needs with scientific accuracy. Features a modern GUI and evidence-based formulas for reliable results.
 
+
+## 📸 Preview
+
+<img width="637" height="397" alt="grafik" src="https://github.com/user-attachments/assets/39bb67ec-4cf5-4da6-af5d-d9ab591bf513" />
+
 ## ✨ Features
 
 - **🧮 Smart BMR Calculation** - Uses Mifflin-St Jeor formula for precision
