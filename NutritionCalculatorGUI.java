@@ -3,8 +3,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class NutritionCalculator {
-    public static void main(String[] args) {
+public class NutritionCalculatorGUI {
+    
+    public void createAndShowWindow() {
         // Window creation
         JFrame frame = new JFrame("Nutrition Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,42 +66,11 @@ public class NutritionCalculator {
                     String goal = (String) goalComboBox.getSelectedItem();
 
 
-                    double goalMultiplier = 0; // Default value
-                    if (goal.contains("Weight Loss")) {
-                        goalMultiplier = -500;
-                    } else if (goal.contains("Maintenance")) {
-                        goalMultiplier = 0;
-                    } else if (goal.contains("Muscle Gain")) {
-                        goalMultiplier = 500;
-                    } else {
-                        System.out.println("Error occured!");
-                    }
+                    double goalMultiplier = CalculatorLogic.getGoalMultiplier(goal);
 
-
-                    double activityMultiplier = 1.375; // Default value
-                    if (activity.contains("Sedentary")) {
-                        activityMultiplier = 1.2;
-                    } else if (activity.contains("Light")) {
-                        activityMultiplier = 1.375;
-                    } else if (activity.contains("Regular")) {
-                        activityMultiplier = 1.55;
-                    } else if (activity.contains("Intensive")) {
-                        activityMultiplier = 1.725;
-                    } else if (activity.contains("Sportsman")) {
-                        activityMultiplier = 1.9;
-                    } else {
-                        System.out.println("Error occured!");
-                    }
-
-
-                    double bmr = 0;
-                    if (gender.equals("male")) {
-                        bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
-                    } else if (gender.equals("female")) {
-                        bmr = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
-                    } else {
-                        System.out.println("Error eccured!");
-                    }
+                    double activityMultiplier = CalculatorLogic.getActivityMultiplier(activity);
+                    
+                    double bmr = CalculatorLogic.calculateBMR(gender, weight, height, age);
 
                     double dailyCalories = (bmr * activityMultiplier) + goalMultiplier;
                     resultCalculation.setText("Daily calories: " + String.format("%.0f", dailyCalories));
