@@ -43,8 +43,8 @@ git clone https://github.com/Pupler/Nutrition-Calculator.git
 cd Nutrition-Calculator
 
 # Compile and run
-javac NutritionCalculator.java
-java NutritionCalculator
+javac *.java
+java Main
 ```
 
 ## 📄 License
