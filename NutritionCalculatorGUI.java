@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class NutritionCalculatorGUI {
-    
+
     public void createAndShowWindow() {
         // Window creation
         JFrame frame = new JFrame("Nutrition Calculator");
@@ -66,11 +66,11 @@ public class NutritionCalculatorGUI {
                     String goal = (String) goalComboBox.getSelectedItem();
 
 
-                    double goalMultiplier = CalculatorLogic.getGoalMultiplier(goal);
+                    double goalMultiplier = CalculationLogic.getGoalMultiplier(goal);
 
-                    double activityMultiplier = CalculatorLogic.getActivityMultiplier(activity);
+                    double activityMultiplier = CalculationLogic.getActivityMultiplier(activity);
                     
-                    double bmr = CalculatorLogic.calculateBMR(gender, weight, height, age);
+                    double bmr = CalculationLogic.calculateBMR(gender, weight, height, age);
 
                     double dailyCalories = (bmr * activityMultiplier) + goalMultiplier;
                     resultCalculation.setText("Daily calories: " + String.format("%.0f", dailyCalories));

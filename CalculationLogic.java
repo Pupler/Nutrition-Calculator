@@ -1,4 +1,4 @@
-public class CalculatorLogic {
+public class CalculationLogic {
     
     public static double calculateBMR(String gender, int weight, int height, int age) {
         if (gender.equals("male")) {
