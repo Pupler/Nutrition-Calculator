@@ -61,6 +61,7 @@ public class NutritionCalculatorGUI {
 
         ImageIcon icon = new ImageIcon("images/icon.png");
         frame.setIconImage(icon.getImage());
+        
 
         // Button events
         calculateButton.addActionListener(new ActionListener() {
