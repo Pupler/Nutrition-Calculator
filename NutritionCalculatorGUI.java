@@ -54,6 +54,11 @@ public class NutritionCalculatorGUI {
         frame.add(resultCalculation);
 
 
+        // Styles
+        frame.getContentPane().setBackground(new Color(240, 240, 240));
+        calculateButton.setBackground(new Color(70, 130, 180));
+        calculateButton.setForeground(Color.WHITE);
+
         // Button events
         calculateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
