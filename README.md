@@ -5,19 +5,20 @@ A professional Java desktop application for calculating daily calorie needs with
 
 ## 📸 Preview
 
-<img width="637" height="397" alt="grafik" src="https://github.com/user-attachments/assets/39bb67ec-4cf5-4da6-af5d-d9ab591bf513" />
+<img width="692" height="449" alt="grafik" src="https://github.com/user-attachments/assets/db55d134-2b98-41f9-88d0-e280a96afa83" />
 
 ## 🗂 Project Structure
 
 | Folder / File | Description |
 |----------------|-------------|
-| `.gitignore` | Specifies files and directories ignored by Git. |
-| `CalculationLogic.java` | Core logic for nutritional calculations. |
-| `LICENSE` | MIT License for open-source usage. |
-| `Main.java` | Application entry point. |
-| `NutritionCalculatorGUI.java` | Swing-based graphical user interface. |
-| `README.md` | Project documentation and setup instructions. |
-
+| `images/` | Application icons and screenshots |
+| `.gitignore` | Git ignore rules |
+| `CalculationLogic.java` | Core logic for nutritional calculations |
+| `LICENSE` | MIT License for open-source usage |
+| `Main.java` | Application entry point |
+| `NutritionCalculatorGUI.java` | Swing-based graphical user interface |
+| `README.md` | Project documentation and setup instructions |
+| `RunProgram.bat` | Windows batch file for easy launching |
 
 ## ✨ Features
 
@@ -42,7 +43,11 @@ git clone https://github.com/Pupler/Nutrition-Calculator.git
 # Navigate to project
 cd Nutrition-Calculator
 
-# Compile and run
+# Start the program
+# Method 1: One-click launch (Windows)
+DOUBLE-CLICK RunProgram.bat
+
+# Method 2: Manual compilation
 javac *.java
 java Main
 ```
