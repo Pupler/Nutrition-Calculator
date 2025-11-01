@@ -22,12 +22,12 @@ A professional Java desktop application for calculating daily calorie needs with
 
 ## ✨ Features
 
-- **🧮 Smart BMR Calculation** - Uses Mifflin-St Jeor formula for precision
-- **🎯 Personalized Calories** - Tailored daily calorie estimates  
-- **⚖️ Gender-Optimized** - Specific algorithms for male/female physiology
-- **🏃 Activity Levels** - Customizable activity multipliers
-- **🎯 Goal Tracking** - Support for weight loss, maintenance, and muscle gain
-- **💻 Modern GUI** - Clean Swing interface with intuitive controls
+- **🧮 BMR Calculation** - Mifflin-St Jeor formula precision
+- **⚖️ Gender-Specific** - Male/female physiology algorithms  
+- **🏃 Activity Adjustment** - Сustomizable levels
+- **🎯 Goal Tracking** - Weight loss, maintenance, muscle gain
+- **💻 Modern GUI** - Clean Swing interface
+- **🖱️ Easy Launch** - One-click batch file
 
 ## 🚀 Getting started
 
