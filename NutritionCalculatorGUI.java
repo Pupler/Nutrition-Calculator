@@ -88,10 +88,18 @@ public class NutritionCalculatorGUI {
         // Borders
         frame.getRootPane().setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
+        // Inputs
         weightTextField.setMargin(new Insets(5, 5, 5, 5));
         heightTextField.setMargin(new Insets(5, 5, 5, 5));
         ageTextField.setMargin(new Insets(5, 5, 5, 5));
-        
+
+        // Button
+        calculateButton.setBackground(new Color(70, 130, 240));
+        calculateButton.setForeground(Color.WHITE);
+        calculateButton.setFocusPainted(false);
+        calculateButton.setBorder(BorderFactory.createEmptyBorder(12, 25, 12, 25));
+        calculateButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
 
         // Button events
         calculateButton.addActionListener(new ActionListener() {
