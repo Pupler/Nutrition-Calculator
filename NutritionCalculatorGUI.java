@@ -9,7 +9,7 @@ public class NutritionCalculatorGUI {
         // Window creation
         JFrame frame = new JFrame("Nutrition Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(650,400);
+        frame.setSize(700,450);
         frame.setLayout(new GridLayout(7,2));
 
         // Components adding
@@ -55,12 +55,33 @@ public class NutritionCalculatorGUI {
 
 
         // Styles
+
+        // Colors
         frame.getContentPane().setBackground(new Color(240, 240, 240));
         calculateButton.setBackground(new Color(70, 130, 180));
         calculateButton.setForeground(Color.WHITE);
 
+        // Images
         ImageIcon icon = new ImageIcon("images/icon.png");
         frame.setIconImage(icon.getImage());
+
+        // Fonts
+        Font customFont = new Font("Montserrat", Font.PLAIN, 14);
+
+        weightTextField.setFont(customFont);
+        heightTextField.setFont(customFont);
+        ageTextField.setFont(customFont);
+        genderComboBox.setFont(customFont);
+        activityComboBox.setFont(customFont);
+        goalComboBox.setFont(customFont);
+        calculateButton.setFont(customFont);
+        resultCalculation.setFont(customFont);
+
+        for (Component comp : frame.getContentPane().getComponents()) {
+            if (comp instanceof JLabel) {
+                ((JLabel) comp).setFont(customFont);
+            }
+        }
         
 
         // Button events
