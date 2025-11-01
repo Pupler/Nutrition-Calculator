@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +12,7 @@ public class NutritionCalculatorGUI {
         JFrame frame = new JFrame("Nutrition Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700,450);
-        frame.setLayout(new GridLayout(7,2));
+        frame.setLayout(new GridLayout(7,2, 5, 5));
 
         // Components adding
         frame.add(new JLabel("Weight (kg):"));
@@ -54,7 +56,7 @@ public class NutritionCalculatorGUI {
         frame.add(resultCalculation);
 
 
-        // Styles
+        // STYLES
 
         // Colors
         frame.getContentPane().setBackground(new Color(240, 240, 240));
@@ -82,7 +84,9 @@ public class NutritionCalculatorGUI {
                 ((JLabel) comp).setFont(customFont);
             }
         }
-        
+
+        // Borders
+        frame.getRootPane().setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         // Button events
         calculateButton.addActionListener(new ActionListener() {
