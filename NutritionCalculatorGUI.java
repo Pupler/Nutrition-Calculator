@@ -11,6 +11,8 @@ public class NutritionCalculatorGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700,450);
         frame.setLayout(new GridLayout(7,2, 5, 5));
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
 
         // Components adding
         frame.add(new JLabel("Weight (kg):"));
@@ -53,7 +55,7 @@ public class NutritionCalculatorGUI {
         JLabel resultCalculation = new JLabel("Daily calories:");
         frame.add(resultCalculation);
 
-
+        
         // STYLES
 
         // Colors
