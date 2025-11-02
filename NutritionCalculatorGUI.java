@@ -57,14 +57,6 @@ public class NutritionCalculatorGUI {
 
         JButton saveBtn = new JButton("Save results");
         frame.add(saveBtn);
-        saveBtn.addActionListener(e -> {
-            try (java.io.FileWriter writer = new java.io.FileWriter("result.txt")) {
-                writer.write(resultCalculation.getText());
-                resultCalculation.setText("Saved!");
-            } catch (Exception ex) {
-                resultCalculation.setText("Save error!");
-            }
-        });
 
         
         // STYLES
@@ -89,6 +81,7 @@ public class NutritionCalculatorGUI {
         goalComboBox.setFont(customFont);
         calculateButton.setFont(customFont);
         resultCalculation.setFont(customFont);
+        saveBtn.setFont(customFont);
 
         for (Component comp : frame.getContentPane().getComponents()) {
             if (comp instanceof JLabel) {
@@ -104,15 +97,21 @@ public class NutritionCalculatorGUI {
         heightTextField.setMargin(new Insets(5, 5, 5, 5));
         ageTextField.setMargin(new Insets(5, 5, 5, 5));
 
-        // Button
+        // Buttons
         calculateButton.setBackground(new Color(70, 130, 240));
         calculateButton.setForeground(Color.WHITE);
         calculateButton.setFocusPainted(false);
         calculateButton.setBorder(BorderFactory.createEmptyBorder(12, 25, 12, 25));
         calculateButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
+        saveBtn.setBackground(new Color(34, 197, 94));
+        saveBtn.setForeground(Color.WHITE);
+        saveBtn.setFocusPainted(false);
+        saveBtn.setBorder(BorderFactory.createEmptyBorder(8, 15, 8, 15));
+        saveBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        // Button events
+
+        // Buttons events
         calculateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -138,6 +137,15 @@ public class NutritionCalculatorGUI {
                         resultCalculation.setText("Error occured! Try again.");
                     }
 
+            }
+        });
+
+        saveBtn.addActionListener(e -> {
+            try (java.io.FileWriter writer = new java.io.FileWriter("result.txt")) {
+                writer.write(resultCalculation.getText());
+                resultCalculation.setText("Saved!");
+            } catch (Exception ex) {
+                resultCalculation.setText("Save error!");
             }
         });
     
