@@ -10,7 +10,7 @@ public class NutritionCalculatorGUI {
         JFrame frame = new JFrame("Nutrition Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700,450);
-        frame.setLayout(new GridLayout(7,2, 5, 5));
+        frame.setLayout(new GridLayout(8,2, 5, 5));
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
@@ -54,6 +54,17 @@ public class NutritionCalculatorGUI {
 
         JLabel resultCalculation = new JLabel("Daily calories:");
         frame.add(resultCalculation);
+
+        JButton saveBtn = new JButton("Save results");
+        frame.add(saveBtn);
+        saveBtn.addActionListener(e -> {
+            try (java.io.FileWriter writer = new java.io.FileWriter("result.txt")) {
+                writer.write(resultCalculation.getText());
+                resultCalculation.setText("Saved!");
+            } catch (Exception ex) {
+                resultCalculation.setText("Save error!");
+            }
+        });
 
         
         // STYLES
